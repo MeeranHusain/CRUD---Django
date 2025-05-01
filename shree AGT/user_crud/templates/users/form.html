@@ -1,0 +1,163 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>User Form</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #9ef778;
+            margin: 0;
+            padding: 0;
+        }
+        .container {
+            max-width: 600px;
+            margin: 60px auto;
+            background: #ffffffe1;
+            padding: 30px 40px;
+            box-shadow: 0 0 25px rgba(0, 0, 0, 0.482);
+            border-radius: 10px;
+        }
+        h2 {
+            text-align: center;
+            color: #333;
+            margin-bottom: 25px;
+        }
+        .form-label {
+            display: block;
+            font-weight: bold;
+            margin-bottom: 6px;
+            color: #333;
+        }
+        input[type="text"],
+        input[type="email"],
+        input[type="password"],
+        input[type="number"],
+        select,
+        textarea {
+            width: 95%;
+            padding: 10px 12px;
+            margin-bottom: 10px;
+            border: 1px solid #ccc;
+            border-radius: 6px;
+            font-size: 14px;
+        }
+        input[type="radio"],
+        input[type="checkbox"] {
+            margin-right: 7px;
+        }
+        .text-danger {
+            color: red;
+            font-size: 13px;
+        }
+        .btn {
+            padding: 10px 20px;
+            font-size: 15px;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+            margin-right: 10px;
+        }
+        .btn-success {
+            background-color: #28a745;
+            color: white;
+        }
+        .btn-secondary {
+            background-color: #6c757d;
+            color: white;
+            text-decoration: none;
+        }
+        /* .btn-secondary:hover{
+            background-color: #f7f7f7;
+            color: #333;
+            border: 2px solid #333;
+        } */
+        .form-buttons {
+            text-align: right;
+            margin-top: 20px;
+        }
+
+
+
+        #particles-js {
+            position: fixed;
+            width: 100%;
+            height: 100%;
+            z-index: -1;
+            top: 0;
+            left: 0;
+        }
+    </style>
+</head>
+<body>
+
+    <!-- Particles Background -->
+<div id="particles-js"></div>
+
+<div class="container">
+    <h2>User Form</h2>
+    <form method="post">
+        {% csrf_token %}
+        {% for field in form %}
+            <div class="mb-3">
+                <label class="form-label">{{ field.label }}</label>
+                {{ field }}
+                {% if field.errors %}
+                    <div class="text-danger">{{ field.errors }}</div>
+                {% endif %}
+            </div>
+        {% endfor %}
+        <div class="form-buttons">
+            <button type="submit" class="btn btn-success">Submit</button>
+            <a href="{% url 'index' %}" class="btn btn-secondary">Back</a>
+        </div>
+    </form>
+
+
+<!-- Particles.js CDN -->
+<script src="https://cdn.jsdelivr.net/npm/particles.js@2.0.0/particles.min.js"></script>
+
+<!-- Particles Config -->
+<script>
+    particlesJS("particles-js", {
+        "particles": {
+            "number": { "value": 100 },
+            "color": { "value": "#0d6efd" },
+            "shape": {
+                "type": "circle",
+                "stroke": { "width": 0, "color": "#000000" }
+            },
+            "opacity": { "value": 0.3 },
+            "size": { "value": 7 },
+            "line_linked": {
+                "enable": true,
+                "distance": 120,
+                "color": "#0d6efd",
+                "opacity": 0.4,
+                "width": 1
+            },
+            "move": {
+                "enable": true,
+                "speed": 2,
+                "direction": "none",
+                "out_mode": "bounce"
+            }
+        },
+        "interactivity": {
+            "events": {
+                "onhover": { "enable": true, "mode": "grab" },
+                "onclick": { "enable": true, "mode": "push" }
+            },
+            "modes": {
+                "grab": { "distance": 140, "line_linked": { "opacity": 0.5 } },
+                "push": { "particles_nb": 4 }
+            }
+        },
+        "retina_detect": true
+    });
+</script>
+
+
+</div>
+</body>
+</html>
