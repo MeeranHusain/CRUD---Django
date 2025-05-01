@@ -55,3 +55,9 @@ python manage.py migrate
 ```bash
 python manage.py runserver
 ```
+
+
+License
+This project is open-source and available under the MIT License.
+
+Made with ❤️ using Django
