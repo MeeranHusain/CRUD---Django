@@ -56,6 +56,10 @@ python manage.py migrate
 python manage.py runserver
 ```
 
+## Contact
+
+- Author: Meeran Husain
+- GitHub: [MeeranHusain](https://github.com/MeeranHusain)
 
 License
 This project is open-source and available under the MIT License.
