@@ -33,3 +33,25 @@ python -m venv venv
 source venv/bin/activate  # On Windows: venv\Scripts\activate
 ```
 
+### 3. Install Dependencies
+
+```bash
+pip install -r requirements.txt
+```
+If requirements.txt is missing, you can install Django manually:
+```bash
+pip install django
+```
+
+### 4. Run Migrations
+
+```bash
+python manage.py makemigrations
+python manage.py migrate
+```
+
+### 5. Start the Development Server
+
+```bash
+python manage.py runserver
+```
