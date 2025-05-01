@@ -24,11 +24,12 @@ This is a simple **CRUD (Create, Read, Update, Delete)** web application built u
 ```bash
 git clone https://github.com/MeeranHusain/CRUD---Django.git
 cd CRUD---Django
-
+```
 
 ### 2. Create a Virtual Environment
 
 ```bash
 python -m venv venv
 source venv/bin/activate  # On Windows: venv\Scripts\activate
+```
 
